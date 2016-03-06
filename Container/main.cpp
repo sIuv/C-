@@ -11,15 +11,21 @@
  * Created on February 13, 2016, 12:20 PM
  */
 
-#include <cstdlib>
+/* #include <cstdlib> */
+#include <iostream>
+#include "list.h"
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
 
+int main(int argc, char** argv) {
+    std::cout << "Hello world!" << std::endl;
+    linked_list list;
+    list.insert(5, 3);
+    list.insert(5, 3);
+    list.insert(5, 3);
+    list.insert(5, 3);
+    list.print();
     return 0;
 }
 
