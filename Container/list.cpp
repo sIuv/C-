@@ -34,8 +34,22 @@ void linked_list::insert(double value, size_t pos) {
     tail = newnode;
   }
   else {
-    head->next = newnode;
-    head = newnode;
+    if (pos >= size()) {
+      head->next = newnode;
+      head = newnode;
+    }
+    else if (pos == 0) {
+      newnode->next=tail;
+      tail = newnode;
+    }
+    else if (pos < size()) {
+      node_t* tmpnode = tail;
+      for (size_t i=1; i < pos; i++) {
+	tmpnode = tmpnode->next;
+      }
+      newnode->next = tmpnode->next;
+      tmpnode->next = newnode;
+    }
   }
 };
 
@@ -49,10 +63,30 @@ size_t linked_list::size() const {
   return counter;
 };
 
+bool linked_list::is_empty() const {
+  return head == NULL;
+  }
+
 void linked_list::print() const {
   node_t* tmpnode = tail;
-  while (tmpnode != NULL) {
-    std::cout << tmpnode->value << std::endl;
-    tmpnode = tmpnode->next;
+  for (size_t i=1; i < size(); i++) {
+    std::cout << i << ": " << tmpnode->value << std::endl;        
+    tmpnode = tmpnode->next;    
+  }
+};
+
+void linked_list::print_reverse() const {
+  node_t* node = tail;
+  node_t* revnode = NULL;
+  while (node != NULL) {
+    node_t* tmpnode = new node_t;
+    tmpnode->value = node->value;
+    tmpnode->next = revnode;
+    node = node->next;
+    revnode = tmpnode;
+  }
+  for (size_t i=1; i < size(); i++) {
+    std::cout << i << ": " << revnode->value << std::endl;        
+    revnode = revnode->next;
   }
 };
