@@ -27,33 +27,33 @@ class linked_list{
 
   /* linked_list& operator=(const linked_list& rhs); */
 
-  /* // adds elementos to the back. */
+  // adds elementos to the back.
   /* linked_list& operator+=(const linked_list& rhs); */
 
-  /* // inserting elements */
+  // inserting elements
    void insert(double value, size_t pos);
-  /* // in front */
+  // in front
   /* void push_front(double value); */
-  /* // in back */
+  // in back
   /* void push_back(double value); */
-  /* // accessing elements */
+  // accessing elements
   /* double front() const; */
   /* double back() const; */
   /* double at(size_t pos) const; */
 
-  /* // removing elements */
-  /* void remove(size_t pos); */
-  /* // remove and access */
+  // removing elements 
+  void remove(size_t pos);
+  // remove and access
   /* double pop_front(); */
   /* double pop_back(); */
 
-  /* // informational */
+  // informational
   size_t size() const;
-  /* bool is_empty() const; */
+  bool is_empty() const; 
 
   /* // output */
   void print() const;
-  /* void print_reverse() const; */
+  void print_reverse() const;
 
  private:
   struct node_t{
