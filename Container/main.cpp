@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     std::cout << "is_empty(): " << list.is_empty() << std::endl;
     list.insert(1, 0);
     std::cout << "is_empty(): " << list.is_empty() << std::endl;
+    //TODO: 1 shall be first not 0.
     list.insert(2, 0);
     list.insert(3, 0);
     list.insert(4, 0);
@@ -35,8 +36,23 @@ int main(int argc, char** argv) {
     list.insert(666, 99);
     std::cout << "Print reverse!" << std::endl;
     list.print_reverse();
-    std::cout << "Print!" << std::endl;
+    std::cout << "size(): " << list.size() << std::endl;
     list.print();
+    list.remove(3);
+    std::cout << "Remove 3" << std::endl;
+    std::cout << "size(): " << list.size() << std::endl;
+    list.print();
+    list.remove(1);
+    std::cout << "Remove 1" << std::endl;
+    list.print();
+    std::cout << "size(): " << list.size() << std::endl;
+    std::cout << "Remove " << list.size() << std::endl;
+    list.remove(list.size());
+    list.print();
+    std::cout << "size(): " << list.size() << std::endl;
+    std::cout << "copy list to list2" << std::endl;
+    linked_list list2 = list;
+    list2.print();
     return 0;
 }
 

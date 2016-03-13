@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   list.h
  * Author: sluv
  *
@@ -25,7 +25,7 @@ class linked_list{
 
   ~linked_list();
 
-  /* linked_list& operator=(const linked_list& rhs); */
+   linked_list& operator=(const linked_list& rhs);
 
   // adds elementos to the back.
   /* linked_list& operator+=(const linked_list& rhs); */
@@ -41,7 +41,7 @@ class linked_list{
   /* double back() const; */
   /* double at(size_t pos) const; */
 
-  // removing elements 
+  // removing elements
   void remove(size_t pos);
   // remove and access
   /* double pop_front(); */
@@ -49,7 +49,7 @@ class linked_list{
 
   // informational
   size_t size() const;
-  bool is_empty() const; 
+  bool is_empty() const;
 
   /* // output */
   void print() const;
@@ -67,4 +67,3 @@ class linked_list{
 };
 
 #endif /* LIST_H */
-
